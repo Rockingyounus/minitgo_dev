@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useContext } from "react";
 import { BiSolidCategory } from "react-icons/bi";
 import { FaLocationDot } from "react-icons/fa6";
@@ -154,9 +153,9 @@ const HomeProducts = () => {
     const a =
       Math.sin(latDiffRad / 2) * Math.sin(latDiffRad / 2) +
       Math.cos(startLatRad) *
-      Math.cos(destLatRad) *
-      Math.sin(lngDiffRad / 2) *
-      Math.sin(lngDiffRad / 2);
+        Math.cos(destLatRad) *
+        Math.sin(lngDiffRad / 2) *
+        Math.sin(lngDiffRad / 2);
 
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
@@ -183,9 +182,9 @@ const HomeProducts = () => {
     const newFilteredProducts = products.filter((product) =>
       range === "20"
         ? calculateDistance(...userCords, product.lat, product.log) >=
-        Number(range)
+          Number(range)
         : calculateDistance(...userCords, product.lat, product.log) <=
-        Number(range)
+          Number(range)
     );
 
     newFilteredProducts.push(...productsWithoutCoordinates);
@@ -205,13 +204,6 @@ const HomeProducts = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-
-
-
-
-
-
 
   return (
     <>
@@ -286,16 +278,20 @@ const HomeProducts = () => {
       <br></br>
       <div className="mx-0 mx-md-5 px-0 px-md-5">
         <div className="row">
-          <div className="col-md-3 col-4 col-xl-3"><h3>
-            <FaLocationDot className="fs-2 p-1" />
-            Nearby
-          </h3>
-          
+          <div className="col-md-3 col-4 col-xl-3">
+            <h3>
+              <FaLocationDot className="fs-2 p-1" />
+              Nearby
+            </h3>
           </div>
-         
+
           <div className="col-md-3 col-4 col-xl-3 d-lg-none">
-            <div className="select-wrapper" id="distanceDropdownWrapper">
-              <select className="form-control rounded-2" id="distanceFilter" onChange="{handleDistanceSelect}">
+            <div class="select-wrapper" id="distanceDropdownWrapper">
+              <select
+                className="form-control rounded-2"
+                id="distanceFilter"
+                onChange="{handleDistanceSelect}"
+              >
                 <option value="all">Distance</option>
                 <option value="5">5 Km</option>
                 <option value="10">10 km</option>
@@ -303,21 +299,24 @@ const HomeProducts = () => {
                 <option value="20">20 km</option>
               </select>
             </div>
-            </div>
+          </div>
         </div>
 
-
-
         <div className="row">
-        <p className="px-2 mx-2" style={{ fontSize: "13.5",}}>
-              Increase distance for more products!{" "}
-            </p>
+          <p className="px-2 mx-2" style={{ fontSize: "13.5" }}>
+            Increase distance for more products!{" "}
+          </p>
           <div className="col-md-2 filter-s ">
             <div className="shadow filter-bg">
               <form>
                 <div className="form-group ">
-                  <h6>Filter</h6>
-                  <label htmlFor="priceFilter">Distance</label>
+                  {/* Code change start by isha */}
+                  {/* <h6>Filter</h6> */}
+                  <div className="FilterHeadingCss">Filter</div>
+                  {/* Code change end by isha */}
+                  <label htmlFor="priceFilter" className="FilterInnerHeading">
+                    Distance
+                  </label>
 
                   <select
                     className="form-control rounded-pill"
@@ -332,7 +331,12 @@ const HomeProducts = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="priceFilter">Set Price</label>
+                  {/* Code change start by isha */}
+                  {/* <label htmlFor="priceFilter">Set Price</label> */}
+                  <label htmlFor="priceFilter" className="FilterInnerHeading">
+                    Set Price
+                  </label>
+                  {/* Code change end by isha */}
                   <select
                     className="form-control rounded-pill "
                     id="priceFilter"
@@ -363,7 +367,6 @@ const HomeProducts = () => {
                     key={index}
                     className="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 py-2 "
                     id="sections"
-
                   >
                     <div className="product-card">
                       <div className="product-image">
@@ -377,8 +380,9 @@ const HomeProducts = () => {
                             {images[index]?.images.map((img, imgIndex) => (
                               <div
                                 key={imgIndex}
-                                className={` h-100  carousel-item${imgIndex === 0 ? " active" : ""
-                                  }`}
+                                className={` h-100  carousel-item${
+                                  imgIndex === 0 ? " active" : ""
+                                }`}
                               >
                                 <a
                                   href={`/${product.product_id}`}
@@ -434,19 +438,35 @@ const HomeProducts = () => {
                             <span className="visually-hidden">Next</span>
                           </button>
                         </div>
-                        <div
+                        {/* Code change start by isha */}
+                        {/* <div
                           className={`offer-tag bg-warning rounded-pill text-center p-1 text-light ${product.offers === "0" && "invisible"
                             }`}
+                        > */}
+                        <div
+                          className={`offer-tag bg-warning rounded-pill text-center p-1 text-light mt-2
+                           ${product.offers === "0" && "invisible"}`}
                         >
+                          {/* Code change end by isha */}
                           {product.offers}% Off
                         </div>
                       </div>
 
                       <div className="product-content d-flex flex-column gap-1 pt-3  px-2">
-                        <div style={{ fontSize: "14px" }} className="d-flex justify-content-between">
+                        <div
+                          style={{ fontSize: "14px" }}
+                          className="d-flex justify-content-between"
+                        >
                           <span>{product.category}</span>
                           <div>
-                            {isNewProduct(product.date) && <span className="btn  btn-secondary p-0 px-1" style={{ color: '#ffc107', fontSize: '14px' }}>New</span>}
+                            {isNewProduct(product.date) && (
+                              <span
+                                className="btn  btn-secondary p-0 px-1"
+                                style={{ color: "#ffc107", fontSize: "14px" }}
+                              >
+                                New
+                              </span>
+                            )}
                           </div>
                         </div>
                         <a
@@ -454,28 +474,26 @@ const HomeProducts = () => {
                           target="_blank"
                           style={{
                             textDecoration: "none",
-                            color: "black"
+                            color: "black",
                           }}
-
                           className="fw-semibold"
-
                         >
                           {windowWidth <= 1024
                             ? product.product_name.length > 15
                               ? product.product_name.substring(0, 15) + "..."
                               : product.product_name
                             : product.product_name.length > 23
-                              ? product.product_name.substring(0, 23) + "..."
-                              : product.product_name}
-
-
+                            ? product.product_name.substring(0, 23) + "..."
+                            : product.product_name}
                         </a>
 
                         <div className="d-flex align-items-center justify-content-between">
                           <h5 className="mt-1">
-                            ₹
-                            {product.product_price}
-                            <span className="text-decoration-line-through text-muted fs-6 fw-light">
+                            ₹{product.product_price}
+                            {/* Code change start by isha */}
+                            {/* <span className="text-decoration-line-through text-muted fs-6 fw-light"> */}
+                            <span className="text-decoration-line-through text-muted fs-6 fw-light ml-3 priceAmount">
+                              {/* Code change end by isha */}
                               599
                             </span>
                             <span
@@ -489,45 +507,46 @@ const HomeProducts = () => {
                             </span>
                           </h5>
                           <div>
-                            <span className="fw-semibold">Size:</span> <span>{product.product_size}</span>
+                            <span className="fw-semibold">Size:</span>{" "}
+                            <span>{product.product_size}</span>
                           </div>
                         </div>
 
-
-                        <div className="d-flex justify-content-between " style={{ fontSize: '14px' }}>
+                        <div
+                          className="d-flex justify-content-between "
+                          style={{ fontSize: "14px" }}
+                        >
                           <div>
-                            <span className="fw-semibold"></span> <span>{product.material}</span>
+                            <span className="fw-semibold"></span>{" "}
+                            <span>{product.material}</span>
                           </div>
                           <div className="">
-                            <span className="fw-semibold">Color:</span> <span>{product.product_color1}</span>
+                            <span className="fw-semibold">Color:</span>{" "}
+                            <span>{product.product_color1}</span>
                           </div>
                         </div>
 
-                        <div className="mt-1" style={{ textAlign: 'justify' }} >
-
+                        <div className="mt-1" style={{ textAlign: "justify" }}>
                           {windowWidth <= 576
                             ? product.product_discription.length > 20
-                              ? product.product_discription.substring(0, 19) + "..."
+                              ? product.product_discription.substring(0, 19) +
+                                "..."
                               : product.product_discription
                             : product.product_discription.length > 50
-                              ? product.product_discription.slice(0, 45) + "..."
-                              : product.product_discription}
-
+                            ? product.product_discription.slice(0, 45) + "..."
+                            : product.product_discription}
 
                           {/* {product.product_discription.length > 50
                               ? product.product_discription.slice(0, 45) + "..."
                               : product.product_discription} */}
                         </div>
 
-
                         <div className="d-flex justify-content-between mt-1">
                           <div className="product-rating text-warning d-flex ">
-
                             <StarRatings rating={product.product_ratings} />
                           </div>
                           {userCords && (
                             <div className="product-distance text-secondary ">
-
                               {product.distance ||
                                 calculateDistance(
                                   ...userCords,
@@ -538,7 +557,6 @@ const HomeProducts = () => {
                             </div>
                           )}
                         </div>
-
 
                         {cart.snackbar.open &&
                           cart.snackbar.index === index && (
@@ -557,10 +575,11 @@ const HomeProducts = () => {
                       >
                         <div className="  w-100 d-flex justify-content-between">
                           <button
-                            className={`btn ${wishlistClicked[index]
-                              ? "btn-success"
-                              : "btn-primary"
-                              } w-25 my-2`}
+                            className={`btn ${
+                              wishlistClicked[index]
+                                ? "btn-success"
+                                : "btn-primary"
+                            } w-25 my-2`}
                             onClick={() => handleWishListToCart(product, index)}
                           >
                             ❤

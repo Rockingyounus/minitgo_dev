@@ -1316,3 +1316,19 @@ button:hover {
  }
 }
 
+
+/*code started by isha*/
+.FilterHeadingCss{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.FilterInnerHeading{
+ text-indent: 5px;
+ margin-top: 10px;
+}
+
+.priceAmount{
+  margin-left: 3px;
+}
+/*code end by isha*/
