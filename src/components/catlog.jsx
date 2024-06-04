@@ -80,8 +80,8 @@ export default function Catlog() {
   return (
     <>
       <div className="catlog filter ">
-        <div className="catlog-names mx-lg-2 info-div text-center mt-1 container-fluid mx-md-5 me-md-5 px-md-5 pe-md-5 px-0 pe-0">
-          <div className="nav-link cat-nav d-none d-md-flex justify-content-evenly w-100 mt-1 mx-5 px-3 pe-5 me-5 new-catlog align-items-center">
+        <div className="catlog-names mx-lg-2 info-div text-center mt-1 container-fluid mx-md-5 mr-2 me-md-5 px-md-5 pe-md-5 px-0 pe-0 ">
+          <div className="nav-link cat-nav hidden md:flex pd-2 d-none d-md-flex justify-content-evenly w-100 mt-3 mx-5 px-3 pe-5 me-5 new-catlog align-items-center">
             <div className="dropdown">
               <button className="btn dropdown-toggle " type="button" id="locationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <FaLocationDot className="fs-4 p-1 mb-1" />
@@ -105,7 +105,7 @@ export default function Catlog() {
                 </li>
               </ul>
             </div>
-
+              
             <Link to={{ pathname: "/accessories", search: `?category=Accessories` }} style={{   color: "black", fontSize: "13.5px" }}>
               <span className="mt-3 ">Fashion</span>
             </Link>
@@ -167,9 +167,9 @@ export default function Catlog() {
                   <li><a className="dropdown-item" href="#">Banglore</a></li>
                 </ul>
               </div>
-              <span>
+              {/* <span>
                 <img src="https://cdn.pixabay.com/photo/2016/11/21/16/55/high-heels-1846436_640.jpg" className="m-0 p-0 homeCatlogImg" style={{ height: "4rem", width: "12rem" }} />
-              </span>
+              </span> */}
             </div>
           )}
 
@@ -182,7 +182,7 @@ export default function Catlog() {
         </div>
 
 
-      </div>
+      
 
 
 
@@ -213,6 +213,7 @@ export default function Catlog() {
             </div>
           </div>
         </div>
+      </div>
       </div>
       {/* modal end */}
     </>
