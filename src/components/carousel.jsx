@@ -22,6 +22,8 @@ export default function Carousel() {
   };
   const cart = useSelector(state => state.cart);
 
+  
+
 
   return (
     <div>
