@@ -31,9 +31,13 @@ export default function Carousel() {
           <span className=" text-muted p-2" style={{ fontSize: 13.5 }}>Nearst trending products</span>
           <div className="rounded-full"></div>
         </div>
-        <div className="d-flex gap-3 overflow-x-auto my-3 ">
+        
+        <div className="d-flex gap-3 overflow-x-auto my-3  scroll-smooth ">
+        
           {products.map((prod, index) => (
-            <div key={index} className="prod px-4 shadow rounded bg-light  ">
+            // code started by Ganesh 
+            //paddding 4px 
+            <div key={index} className="prod p-4 shadow rounded bg-light  ">
               <a
                 href={`/${prod.product_id}`}
                 target="_blank"
@@ -47,9 +51,12 @@ export default function Carousel() {
                   <img className="w-100 rounded" src={prod.product_image1} alt={`Image ${prod.product_id}`} />
                   <div className="d-flex flex-column justify-content-between p-2">
                     <div className="d-flex flex-column">
-                      <h1 className="fs-4">{prod.product_name}</h1>
+                      {/* /// code startd by Ganesh */}
+                      {/* /// font size increse  */}
+                      <h1 className="fs-3">{prod.product_name}</h1>
+                      {/* ////emd code by Ganesh */}
                       <p className="text-muted">{prod.product_discription}</p>
-                      <p className="text-muted">{prod.product_size}</p>
+                      <p className="font-bold">{prod.product_size}</p>
                     </div>
                     {cart.snackbar.open && cart.snackbar.index === index && (
                       <div
@@ -75,6 +82,7 @@ export default function Carousel() {
             </div>
 
           ))}
+          
         </div>
       </div>
     </div>
