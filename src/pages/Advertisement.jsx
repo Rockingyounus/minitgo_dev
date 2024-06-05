@@ -4,11 +4,13 @@ import { FaXTwitter, FaFacebook, FaSquareInstagram } from "react-icons/fa6";
 
 const Advertisement = () => {
   return (
+    // code by Ganesh 
     <div
-      className="container  rounded-4"
-      style={{ backgroundColor: "#e4d6d2" }}
+      className="container  rounded-4  "
+      style={{ backgroundColor: "#e4d6d2" ,marginTop:"80px",marginBottom:"70px"}}
     >
-      <div className="row p-3">
+        {/* code end by Ganesh  */}
+      <div className="row p-3 ">
         <div className="col-md-8 order-md-1">
           <h2 className="fw-bold text-start">MINITGO</h2>
           <p className="lead fw-normal">Get delivery in minutes</p>
@@ -80,7 +82,7 @@ const Advertisement = () => {
           {/*Shafeeq updated this to display image under launching soon in mobile screen*/}
 
           {/* code started by ganesh */}
-          {/* increase the padding top of image */}
+          {/* increase the padding top of  */}
           <div className="text-center pt-5">
             <img
               src={image}
@@ -95,7 +97,9 @@ const Advertisement = () => {
         </div>
       </div>
       {/* ////gap 5 */}
-      <div className="d-flex gap-5 mb-3 mx-5">
+      {/* <div className="d-flex gap-3 ml-3 "> */}
+      {/* <div className="col-md-5 d-flex justify-content-center gap-4 flex-wrap-sm "> */}
+      <div className=" w-full h-full d-flex ml-3 gap-3 p-4">
         <img
           src="/appstore.png"
           alt="App Image"
