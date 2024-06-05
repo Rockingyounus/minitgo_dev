@@ -63,7 +63,7 @@ export default function Carousel() {
                       {/* code started by ganesh */}
                       <p className="line-clamp-2">{prod.product_discription}</p>
                       {/* code end by ganesh */}
-                      <p className="font-bold">{prod.product_size}</p>
+                      <p className="font-bold" style={{ fontWeight: '700' }}>{prod.product_size}</p>
                     </div>
                     {cart.snackbar.open && cart.snackbar.index === index && (
                       <div
