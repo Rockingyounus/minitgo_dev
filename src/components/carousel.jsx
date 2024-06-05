@@ -23,17 +23,24 @@ export default function Carousel() {
   const cart = useSelector(state => state.cart);
 
 
+
+
   return (
     <div>
-      <div className="container">
+      <div className="container ">
         <div className="text-left">
           <h3 className=" ">Trending Section</h3>
           <span className=" text-muted p-2" style={{ fontSize: 13.5 }}>Nearst trending products</span>
           <div className="rounded-full"></div>
         </div>
-        <div className="d-flex gap-3 overflow-x-auto my-3 ">
+        
+        <div className="d-flex gap-3 overflow-x-scroll my-3  px-4 scroll-smooth ">
+        
           {products.map((prod, index) => (
-            <div key={index} className="prod px-4 shadow rounded bg-light  ">
+            // code started by Ganesh 
+            //paddding 4px 
+            <div key={index} className="prod p-4 shadow rounded bg-light my-4   ">
+              {/* end code by Ganesh  */}
               <a
                 href={`/${prod.product_id}`}
                 target="_blank"
@@ -41,15 +48,22 @@ export default function Carousel() {
                   textDecoration: "none",
                   color: "black",
                 }}
+                className=" text-black"
               >
-
-                <div key={index} className="d-flex flex-column    " style={{height:'700px'}} >
+                {/* code started by ganesh */}
+                <div key={index} className="d-flex flex-column mb-2 " style={{height:'500px'}} >
+                  {/* code end by ganesh */}
                   <img className="w-100 rounded" src={prod.product_image1} alt={`Image ${prod.product_id}`} />
                   <div className="d-flex flex-column justify-content-between p-2">
                     <div className="d-flex flex-column">
-                      <h1 className="fs-4">{prod.product_name}</h1>
-                      <p className="text-muted">{prod.product_discription}</p>
-                      <p className="text-muted">{prod.product_size}</p>
+                      {/* /// code startd by Ganesh */}
+                      {/* /// font size increse  */}
+                      <h1 className="fs-3">{prod.product_name}</h1>
+                      {/* ////emd code by Ganesh */}
+                      {/* code started by ganesh */}
+                      <p className="line-clamp-2">{prod.product_discription}</p>
+                      {/* code end by ganesh */}
+                      <p className="font-bold">{prod.product_size}</p>
                     </div>
                     {cart.snackbar.open && cart.snackbar.index === index && (
                       <div
@@ -63,7 +77,7 @@ export default function Carousel() {
                   </div>
                 </div>
               </a>
-              <div className="d-flex justify-content-center align-items-center fs-4 mt-auto mb-3 ">
+              <div className="d-flex justify-content-center align-items-center fs-4 mt-auto my-2 mb-3 ">
 
                 <button className="btn  btn-dark w-100 " style={{ whiteSpace: 'nowrap' }} onClick={() => handleAddToCart(prod, index)}> Add To Cart</button>
                 <div className="d-flex ">
@@ -75,6 +89,7 @@ export default function Carousel() {
             </div>
 
           ))}
+          
         </div>
       </div>
     </div>

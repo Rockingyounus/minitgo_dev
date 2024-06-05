@@ -1316,3 +1316,28 @@ button:hover {
  }
 }
 
+
+/*code started by isha*/
+.FilterHeadingCss{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.FilterInnerHeading{
+ text-indent: 5px;
+ margin-top: 10px;
+}
+
+.priceAmount{
+  margin-left: 3px;
+}
+/*code end by isha*/
+/* code starte by ganesh */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* code end by ganesh */

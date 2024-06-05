@@ -25,25 +25,37 @@ const DiscountProduct = () => {
     <div className=" col-md-3 ">
       <div className="best-cat">
         <h4>Upto 50% Off Men's Fashion</h4>
-        <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button>
+        {/* <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button> */}
+        {/*code started by isha */}
+        <button className="btn btn-outline-light bg-warning rounded-pill border-0 mx-3" >Shop Now</button>
+        {/*code end by isha */}
       </div>
     </div>
     <div className=" col-md-3">
       <div className="best-cat-2">
         <h4>Upto 60% Off On Women's Fashion</h4>
-        <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button>
+        {/* <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button> */}
+         {/*code started by isha */}
+         <button className="btn btn-outline-light bg-warning rounded-pill border-0 mx-3" >Shop Now</button>
+        {/*code end by isha */}
       </div>
     </div>
     <div className="  col-md-3">
       <div className="best-cat-3">
         <h4>Upto 50% Off Fashion Accessories</h4>
-        <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button>
+        {/* <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button> */}
+         {/*code started by isha */}
+         <button className="btn btn-outline-light bg-warning rounded-pill border-0 mx-3" >Shop Now</button>
+        {/*code end by isha */}
       </div>
     </div>
     <div className="col-md-3">
       <div className="best-cat-4">
         <h4> Upto 50% Off On Kitchen & Home Appliances</h4>
-        <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button>
+        {/* <button className="btn btn-outline-light bg-warning rounded-pill border-0">Shop Now</button> */}
+         {/*code started by isha */}
+         <button className="btn btn-outline-light bg-warning rounded-pill border-0 mx-3" >Shop Now</button>
+        {/*code end by isha */}
       </div>
     </div>
   </div>
