@@ -373,13 +373,16 @@ const HomeProducts = () => {
                       {/* original code */}
                       {/* <div className="product-image " > */}
                       {/* change done by sonali */}
-                      <div className="product-image " style={{ position: "relative"}}>
+                      <div
+                        className="product-image "
+                        style={{ position: "relative" }}
+                      >
                         <div
                           id={`carouselExampleIndicators${index}`}
                           className=" carousel slide v w-100  rounded-2"
                           data-bs-ride="carousel"
-                          // 
-                          style={{ height: "100%" ,}}
+                          //
+                          style={{ height: "100%" }}
                         >
                           <div className="carousel-inner rounded   h-100">
                             {images[index]?.images.map((img, imgIndex) => (
@@ -395,8 +398,6 @@ const HomeProducts = () => {
                                   style={{
                                     textDecoration: "none",
                                     color: "black",
-                              
-                                    
                                   }}
                                 >
                                   <img
@@ -456,29 +457,31 @@ const HomeProducts = () => {
                            ${product.offers === "0" && "invisible"}`}
                         > */}
                         {/* changes done by sonali */}
+                        {/* update code for responsive offer section by ganesh */}
                         <div>
-                        
                           <div
-                          className="offer-tag text-center p-1 text-bold mt-2"
-                          style={{
+                            className="offer-tag text-center p-1 text-bold mt-2"
+                            style={{
                               position: "absolute",
                               bottom: "15px",
                               right: "10px",
+                              fontSize: "0.8rem",
+                              padding: "1rem",
                               textDecorationColor: "HighlightText",
                               border: "2px solid",
                               borderRadius: "50px",
                               fontWeight: "bold",
-                              backgroundColor: product.offers === "0" ? "" : "#e8d9b7",
+                              backgroundColor:
+                                product.offers === "0" ? "" : "#e8d9b7",
                               opacity: product.offers === "0" ? 0 : 0.5,
-                              
-                          }}>
-                      
-                          {product.offers === "0" ? "No Offer" : `${product.offers}% Off`}
-                      </div>
-                      
-
+                            }}
+                          >
+                            {product.offers === "0"
+                              ? "No Offer"
+                              : `${product.offers}% Off`}
+                          </div>
                         </div>
-
+                        
                       </div>
 
                       <div className="product-content d-flex flex-column gap-1 pt-3  px-2">
