@@ -355,7 +355,8 @@ const [weatherData, setWeatherData] = useState(null);
                 <div className="fw-semibold" style={{fontSize:"13px"}}>{weatherData}&deg;C</div>
               </div>
               <div>
-                <div style={{ fontSize: "10px" }}>Location</div>
+                 {/* <div style={{ fontSize: "10px" }}>Location</div> */}
+                 <div style={{ fontSize: "10px" }}>{cityAccordingToLocation}</div>
               </div>
             </div>
 
@@ -626,7 +627,8 @@ const [weatherData, setWeatherData] = useState(null);
                   <span className="fw-semibold">{weatherData}&deg;C</span>
                 </div>
                 <div>
-                  <p style={{ fontSize: "10px" }}>Location</p>
+                <p style={{ fontSize: "10px" }}>{cityAccordingToLocation}</p>
+                {/* <p style={{ fontSize: "10px" }}>Location</p> */}
                 </div>
 
               </div>
