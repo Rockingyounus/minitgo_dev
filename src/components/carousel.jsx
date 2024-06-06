@@ -25,7 +25,7 @@ export default function Carousel() {
     }, 1000);
   };
   const cart = useSelector((state) => state.cart);
-
+  console.log("cart products", products)
   return (
     <div>
       <div className="container ">
@@ -43,7 +43,7 @@ export default function Carousel() {
             //paddding 4px
             <div
               key={index}
-              className="prod p-4 shadow rounded bg-light my-4   "
+              className="prod p-4 shadow rounded bg-light my-4"
             >
               {/* end code by Ganesh  */}
               <a
@@ -59,11 +59,11 @@ export default function Carousel() {
                 <div
                   key={index}
                   className="d-flex flex-column mb-2 "
-                  style={{ height: "500px" }}
+                  style={{ height: "540px" }}
                 >
                   {/* {/* code end by ganesh * */}
                   {/* code started by ganesh  */}
-                  <div style={{width:"100%" ,height:"55%"}}>
+                  <div style={{ width: "100%", height: "55%" }}>
                     <img
                       className="w-100 rounded h-100"
                       src={prod.product_image1}
@@ -71,18 +71,26 @@ export default function Carousel() {
                     />
                   </div>
                   {/* code end by ganesh */}
-                  <div className="d-flex flex-column justify-content-between p-2">
-                    <div className="d-flex flex-column">
-                      {/* /// code startd by Ganesh */}
-                      {/* /// font size increse  */}
-                      <h1 className="fs-3">{prod.product_name}</h1>
-                      {/* ////emd code by Ganesh */}
-                      {/* code started by ganesh */}
+                  <div className=" p-2">
+
+
+                    {/* new code pooja */}
+                    <div className="row">
+                      <h1 className="fs-4">{prod.product_name}</h1>
+                      <p>{prod.category}</p>
                       <p className="line-clamp-2">{prod.product_discription}</p>
-                      {/* code end by ganesh */}
-                      <p className="font-bold" style={{ fontWeight: "700" }}>
-                        {prod.product_size}
-                      </p>
+                      <div className="d-flex justify-content-between flex-wrap">
+                        <p>Price: {prod.product_price}</p>
+                        <p>Material: {prod.material}</p>
+
+                      </div>
+
+                      <div className="d-flex justify-content-between flex-wrap">
+
+                        <p>Color: {prod.product_color1}</p>
+                        <p>Size: {prod.product_size}</p>
+                      </div>
+
                     </div>
                     {cart.snackbar.open && cart.snackbar.index === index && (
                       <div
@@ -123,3 +131,12 @@ export default function Carousel() {
     </div>
   );
 }
+
+
+{/* <div className="d-flex flex-column">
+                      <h1 className="fs-3">{prod.product_name}</h1>
+                      <p className="line-clamp-2">{prod.product_discription}</p>
+                      <p className="font-bold" style={{ fontWeight: "700" }}>
+                        {prod.product_size}
+                      </p>
+                    </div> */}
