@@ -51,7 +51,7 @@ function ProductCard({ product, index }) {
 
   return (
     <div key={index} className="col-6 col-sm-3 py-2 w-100">
-      <div className="product-card">
+      <div className="product-card ">
         <a
           href={`/${product.product_id}`}
           target="_blank"
@@ -60,12 +60,18 @@ function ProductCard({ product, index }) {
             color: "black",
           }}
         >
-          <div className="product-image">
-            <img src={product.product_image1} alt="Product 1" />
+          <div className="product-image" style={{ position: "relative" }}>
+            <img src={product.product_image1} alt="Product 1"  />
             <div
               className={`offer-tag bg-warning rounded-pill text-center p-1 text-light ${
                 product.offers === "0" && "invisible"
-              }`}
+              }`} style={{
+                position: "absolute",
+                bottom: "10px",
+                right: "10px",
+                fontSize: "0.8rem",
+                padding: "1rem",
+              }}
             >
               {product.offers}% Off
             </div>
