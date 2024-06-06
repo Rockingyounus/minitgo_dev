@@ -55,7 +55,7 @@ function BestSellers() {
   }, []);
 
   return (
-    <div className="container" onWheel={handleWheelScroll}>
+    <div className="container " onWheel={handleWheelScroll}>
       <div
         id="best-seller"
         className="carousel slide"

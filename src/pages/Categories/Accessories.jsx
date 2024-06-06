@@ -41,7 +41,7 @@ const Accessories = () => {
     selectedPrice,
     setSearchQuery,
     offer,
-    isNewProduct
+    isNewProduct,
   } = context;
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
@@ -245,10 +245,9 @@ const Accessories = () => {
     };
   }, []);
 
-
   const user = JSON.parse(localStorage.getItem("user"));
   const userCords = user ? [user.lat, user.log] : null;
-const calculateDistance = (startLat, startLng, destLat, destLng) => {
+  const calculateDistance = (startLat, startLng, destLat, destLng) => {
     if (!startLat || !startLng || !destLat || !destLng) return Infinity;
 
     const degToRad = (degrees) => {
@@ -299,7 +298,10 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
           <div className="col-md-10">
             <div className="row">
               {filteredProducts?.map((product, index) => (
-                <div key={index} className="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 py-2">
+                <div
+                  key={index}
+                  className="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 py-2"
+                >
                   <div className="product-card">
                     <a
                       href={`/${product.product_id}`}
@@ -309,24 +311,45 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
                         color: "black",
                       }}
                     >
-                      <div className="product-image">
+                      {/* update the code by ganesh */}
+                      <div className="product-image" style={{ position: "relative" }}>
                         <img src={product.product_image1} alt="Product 1" />
                         <div
-                          className={`offer-tag bg-warning rounded-pill text-center p-1 text-light ${
-                            product.offers === "0" && "invisible"
-                          }`}
-                        >
-                          {product.offers}% Off
+                          className="offer-tag text-center p-1 text-bold mt-2" style={{
+                            position: "absolute",
+                            bottom: "15px",
+                            right: "10px",
+                            fontSize: "0.8rem",
+                            padding: "1rem",
+                            textDecorationColor: "HighlightText",
+                            border: "2px solid",
+                            borderRadius: "50px",
+                            fontWeight: "bold",
+                            backgroundColor: product.offers === "0" ? "" : "#e8d9b7",
+                            opacity: product.offers === "0" ? 0 : 0.5,
+                            
+                        }}>
+                          {/* end code by ganesh */}
+                    
+                        {product.offers === "0" ? "No Offer" : `${product.offers}% Off`}
                         </div>
                       </div>
-                     
-                     
-                     
+
                       <div className="product-content d-flex flex-column gap-1 pt-3  px-2">
-                        <div style={{ fontSize: "14px" }} className="d-flex justify-content-between">
+                        <div
+                          style={{ fontSize: "14px" }}
+                          className="d-flex justify-content-between"
+                        >
                           <span>{product.category}</span>
                           <div>
-                          {isNewProduct(product.date) && <span className="btn  btn-secondary p-0 px-1" style={{color:'#ffc107',fontSize:'14px'}}>New</span>}
+                            {isNewProduct(product.date) && (
+                              <span
+                                className="btn  btn-secondary p-0 px-1"
+                                style={{ color: "#ffc107", fontSize: "14px" }}
+                              >
+                                New
+                              </span>
+                            )}
                           </div>
                         </div>
                         <a
@@ -334,11 +357,9 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
                           target="_blank"
                           style={{
                             textDecoration: "none",
-                            color: "black"
+                            color: "black",
                           }}
-
                           className="fw-semibold"
-
                         >
                           {windowWidth <= 1024
                             ? product.product_name.length > 15
@@ -347,79 +368,76 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
                             : product.product_name.length > 23
                             ? product.product_name.substring(0, 23) + "..."
                             : product.product_name}
-
-                           
                         </a>
 
                         <div className="d-flex align-items-center justify-content-between">
-                        <h5 className="mt-1">
-                        ₹
-                          {product.product_price}
-                          <span className="text-decoration-line-through text-muted fs-6 fw-light">
-                            599
-                          </span>
-                          <span
-                            className="text-muted"
-                            style={{
-                              fontSize: "13px",
-                            }}
-                          >
-                            {" "}
-                            {product.product_stock}
-                          </span>
-                        </h5>
-                        <div>
-                            <span className="fw-semibold">Size:</span> <span>{product.product_size}</span>
+                          <h5 className="mt-1">
+                            ₹{product.product_price}
+                            <span className="text-decoration-line-through text-muted fs-6 fw-light">
+                              599
+                            </span>
+                            <span
+                              className="text-muted"
+                              style={{
+                                fontSize: "13px",
+                              }}
+                            >
+                              {" "}
+                              {product.product_stock}
+                            </span>
+                          </h5>
+                          <div>
+                            <span className="fw-semibold">Size:</span>{" "}
+                            <span>{product.product_size}</span>
                           </div>
                         </div>
-                       
 
-                        <div className="d-flex justify-content-between " style={{fontSize:'14px'}}>
+                        <div
+                          className="d-flex justify-content-between "
+                          style={{ fontSize: "14px" }}
+                        >
                           <div>
-                            <span className="fw-semibold"></span> <span>{product.material}</span>
+                            <span className="fw-semibold"></span>{" "}
+                            <span>{product.material}</span>
                           </div>
                           <div className="">
-                            <span className="fw-semibold">Color:</span> <span>{product.product_color1}</span>
+                            <span className="fw-semibold">Color:</span>{" "}
+                            <span>{product.product_color1}</span>
                           </div>
                         </div>
-                      
-                          <div className="mt-1" style={{textAlign:'justify'}} >
 
+                        <div className="mt-1" style={{ textAlign: "justify" }}>
                           {windowWidth <= 576
                             ? product.product_discription.length > 20
-                              ? product.product_discription.substring(0, 19) + "..."
+                              ? product.product_discription.substring(0, 19) +
+                                "..."
                               : product.product_discription
-                            :product.product_discription.length > 50
+                            : product.product_discription.length > 50
                             ? product.product_discription.slice(0, 45) + "..."
                             : product.product_discription}
 
-
-                            {/* {product.product_discription.length > 50
+                          {/* {product.product_discription.length > 50
                               ? product.product_discription.slice(0, 45) + "..."
                               : product.product_discription} */}
-                          </div>
-                        
+                        </div>
 
                         <div className="d-flex justify-content-between mt-1">
-                        <div className="product-rating text-warning d-flex ">
-                          
-                          <StarRatings rating={product.product_ratings} />
-                        </div>
-                        {userCords && (
-                          <div className="product-distance text-secondary ">
-                           
-                            {product.distance ||
-                              calculateDistance(
-                                ...userCords,
-                                product.lat,
-                                product.log
-                              )}
-                            km away.
+                          <div className="product-rating text-warning d-flex ">
+                            <StarRatings rating={product.product_ratings} />
                           </div>
-                        )}
+                          {userCords && (
+                            <div className="product-distance text-secondary ">
+                              {product.distance ||
+                                calculateDistance(
+                                  ...userCords,
+                                  product.lat,
+                                  product.log
+                                )}
+                              km away.
+                            </div>
+                          )}
                         </div>
-                       
-                       
+
                         {cart.snackbar.open &&
                           cart.snackbar.index === index && (
                             <div
@@ -433,14 +451,13 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
                     </a>
 
                     <div
-                        className="d-flex align-items-center mt-2 px-2"
-                        id="btns-sections"
-                      >
-                        <div className="  w-100 d-flex justify-content-between">
+                      className="d-flex align-items-center mt-2 px-2"
+                      id="btns-sections"
+                    >
+                      <div className="  w-100 d-flex justify-content-between">
                         <button
                           className="btn btn-primary  my-2 "
                           onClick={() => handleAddToCart(product, index)}
-                         
                         >
                           <img
                             className="p-0 "
@@ -448,14 +465,14 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
                             style={{ height: "20px" }}
                           />
                         </button>
-                          <button
-                            onClick={() => handleAddToCart(product, index)}
-                            className="btn btn-primary my-2  ms-2"
-                          >
-                            Add to cart
-                          </button>
-                        </div>
+                        <button
+                          onClick={() => handleAddToCart(product, index)}
+                          className="btn btn-primary my-2  ms-2"
+                        >
+                          Add to cart
+                        </button>
                       </div>
+                    </div>
                   </div>
                 </div>
               ))}

@@ -464,6 +464,8 @@ const HomeProducts = () => {
                               position: "absolute",
                               bottom: "15px",
                               right: "10px",
+                              fontSize: "0.8rem",
+                              padding: "1rem",
                               textDecorationColor: "HighlightText",
                               border: "2px solid",
                               borderRadius: "50px",
