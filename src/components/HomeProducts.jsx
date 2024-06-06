@@ -289,11 +289,11 @@ const HomeProducts = () => {
           <div className="col-md-3 col-4 col-xl-3 d-lg-none">
             <div class="select-wrapper" id="distanceDropdownWrapper">
               <select
-                className="form-control rounded-2"
+                className="form-control rounded  "
                 id="distanceFilter"
                 onChange="{handleDistanceSelect}"
               >
-                <option value="all">Distance</option>
+                <option value="all" className="">Distance</option>
                 <option value="5">5 Km</option>
                 <option value="10">10 km</option>
                 <option value="15">15 km</option>
