@@ -241,6 +241,7 @@ function Header() {
   };
 
   //code for location
+  {/*code started by isha */}
   const [locationForWeather, setLocationForWeather] = useState({  latitude: 17.385044, longitude: 78.486671, });
   const [cityAccordingToLocation, setCityAccordingToLocation] = useState("Hyderabad")
   const [error, setError] = useState(null);
@@ -266,7 +267,7 @@ const [weatherData, setWeatherData] = useState(null);
       fetchWeatherData();
     }
   }, [locationForWeather]);
-
+{/*code end by isha */}
 
   const userData = JSON.parse(localStorage.getItem("user"));
 
