@@ -10,6 +10,7 @@ import Advertisement from "./Advertisement";
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    /* home HomeProducts */
   }, [])
 
   return (
