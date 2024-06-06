@@ -15,6 +15,7 @@ import {
   showSnackbarForWishlist,
   hideSnackbarForWishlist,
 } from "./redux/Slices/CartSlice";
+import zIndex from "@mui/material/styles/zIndex";
 
 const HomeProducts = () => {
   const dispatch = useDispatch();
@@ -368,13 +369,17 @@ const HomeProducts = () => {
                     className="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 py-2 "
                     id="sections"
                   >
-                    <div className="product-card">
-                      <div className="product-image">
+                    <div className="product-card ">
+                      {/* original code */}
+                      {/* <div className="product-image " > */}
+                      {/* change done by sonali */}
+                      <div className="product-image " style={{ position: "relative"}}>
                         <div
                           id={`carouselExampleIndicators${index}`}
                           className=" carousel slide v w-100  rounded-2"
                           data-bs-ride="carousel"
-                          style={{ height: "100%" }}
+                          // 
+                          style={{ height: "100%" ,}}
                         >
                           <div className="carousel-inner rounded   h-100">
                             {images[index]?.images.map((img, imgIndex) => (
@@ -390,6 +395,8 @@ const HomeProducts = () => {
                                   style={{
                                     textDecoration: "none",
                                     color: "black",
+                              
+                                    
                                   }}
                                 >
                                   <img
@@ -443,13 +450,35 @@ const HomeProducts = () => {
                           className={`offer-tag bg-warning rounded-pill text-center p-1 text-light ${product.offers === "0" && "invisible"
                             }`}
                         > */}
-                        <div
+                        {/* original code */}
+                        {/* <div
                           className={`offer-tag bg-warning rounded-pill text-center p-1 text-light mt-2
                            ${product.offers === "0" && "invisible"}`}
-                        >
-                          {/* Code change end by isha */}
-                          {product.offers}% Off
+                        > */}
+                        {/* changes done by sonali */}
+                        <div>
+                        
+                          <div
+                          className="offer-tag text-center p-1 text-bold mt-2"
+                          style={{
+                              position: "absolute",
+                              bottom: "15px",
+                              right: "10px",
+                              textDecorationColor: "HighlightText",
+                              border: "2px solid",
+                              borderRadius: "50px",
+                              fontWeight: "bold",
+                              backgroundColor: product.offers === "0" ? "" : "#e8d9b7",
+                              opacity: product.offers === "0" ? 0 : 0.5,
+                              
+                          }}>
+                      
+                          {product.offers === "0" ? "No Offer" : `${product.offers}% Off`}
+                      </div>
+                      
+
                         </div>
+
                       </div>
 
                       <div className="product-content d-flex flex-column gap-1 pt-3  px-2">

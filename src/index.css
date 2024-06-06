@@ -20,12 +20,13 @@ h3 {
   font-weight: bold;
 } 
 .spacing{
-  gap: 10px;
+  gap:15px;
   margin-left: 10px;
 }
 .locate{
   margin-left: 15px;
 }
+
 
 
 /* original code */
@@ -41,7 +42,13 @@ h3 {
 }
 
 p, .content, .product-description {
-  font-family: 'Roboto', sans-serif; /* Or 'Open Sans', sans-serif */
+  /* origial */
+  /* font-family: 'Roboto', sans-serif; /*Or 'Open Sans', sans-serif */
+  /* updated  by sonali*/
+  font-family: 'Roboto', sans-serif; 
+  font-weight:bolder;
+  font-size:x-large;
+
 }
 
 /* Mobile Header styling here*/
@@ -738,7 +745,7 @@ h2 {
     display: none;
   }
 
-  /* .product-image img {
+  /* .ct-image img {
     height: 29.5vh;
   } */
 

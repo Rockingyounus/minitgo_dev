@@ -40,7 +40,10 @@ function ContactUs() {
               <img
                 src={Logo}
                 alt="zendesk"
-                className="img-fluid w-25 img-thumbnail opacity-75"
+                // original code
+                // className="img-fluid w-25 img-thumbnail opacity-75 "
+                // updated code by sonali
+                className="img-fluid w-25  opacity-75 "
               />
             </div>
           </div>
