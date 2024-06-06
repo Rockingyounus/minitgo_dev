@@ -76,19 +76,19 @@ export default function Carousel() {
 
                     {/* new code pooja */}
                     <div className="row">
-                      <h1 className="fs-4">{prod.product_name}</h1>
-                      <p>{prod.category}</p>
-                      <p className="line-clamp-2">{prod.product_discription}</p>
+                      <h1 className="fs-5 fw-medium">{prod.product_name}</h1>
+                      <p className="fs-6 fw-light">{prod.category}</p>
+                      <p className="fs-6 line-clamp-2 fw-light">{prod.product_discription}</p>
                       <div className="d-flex justify-content-between flex-wrap">
-                        <p>Price: {prod.product_price}</p>
-                        <p>Material: {prod.material}</p>
+                        <p className="fs-6 fw-light">Price: {prod.product_price}</p>
+                        <p className="fs-6 fw-light">Material: {prod.material}</p>
 
                       </div>
 
                       <div className="d-flex justify-content-between flex-wrap">
 
-                        <p>Color: {prod.product_color1}</p>
-                        <p>Size: {prod.product_size}</p>
+                        <p className="fs-6 fw-light">Color: {prod.product_color1}</p>
+                        <p className="fs-6 fw-light">Size: {prod.product_size}</p>
                       </div>
 
                     </div>
