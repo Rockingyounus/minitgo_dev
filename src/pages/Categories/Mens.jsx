@@ -414,10 +414,14 @@ const calculateDistance = (startLat, startLng, destLat, destLng) => {
                           onClick={() => handleAddToCart(product, index)}
                          
                         >
+                          
                           <img
                             className="p-0 "
                             src={cartIcon}
-                            style={{ height: "20px" }}
+                            style={{ height: "20px",
+                               color: "white",
+                  
+                             }}
                           />
                         </button>
                           <button

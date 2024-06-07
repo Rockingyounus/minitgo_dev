@@ -29,6 +29,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
 // import { BiCartAlt } from "react-icons/bi";
 import cartIcon from "../assets/cart-icon.svg";
+// import icons from "../assets/blogPage/icons.svg";
 import { BiLogIn } from "react-icons/bi";
 import { BiMenuAltRight } from "react-icons/bi";
 import Catlog from "./catlog.jsx";
@@ -372,7 +373,7 @@ const [weatherData, setWeatherData] = useState(null);
                 className="cartIcon"
                   src={cartIcon}
                   alt="Cart"
-                  style={{ height: "2rem", width: "2rem" }}
+                  style={{ height: "2rem", width: "2rem"  }}
                 />
                 <h6
                   className="QTYValue"
@@ -602,7 +603,7 @@ const [weatherData, setWeatherData] = useState(null);
                     src={cartIcon}
                     alt="Cart"
                     //updated code//sonali
-                    className="w-100 mx-auto "
+                    className="w-100 mx-auto"
                     // origial code
                     // className="w-100 mx-auto "
 
@@ -1014,7 +1015,7 @@ const [weatherData, setWeatherData] = useState(null);
             <div className="d-flex flex-column justify-content-center align-items-center border rounded  py-4 my-2">
 
               <div
-                className="rounded rounded-circle border border-2 border-primary "
+                className="rounded rounded-circle  border-2 border-primary "
                 style={{
                   display: "flex",
                   justifyContent: "center",
