@@ -41,7 +41,7 @@ const Login = ({ closeLoginModal }) => {
   //   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   //   const phonePattern = /^[0-9]{7}$/;
   //   if (userid === "" || password === "") {
-  //     // if (userid === "" ) {
+  //      if (userid === "" ) {
   //     toast.error("All fields are required", {
   //       autoClose: 1000,
   //       hideProgressBar: true,
@@ -131,7 +131,9 @@ const Login = ({ closeLoginModal }) => {
   //       });
   //   }
   // }
+ 
 
+  // code start by ansari
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -140,7 +142,7 @@ const Login = ({ closeLoginModal }) => {
     console.log(password);
    
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const phonePattern = /^[0-9]{7}$/;
+    const phonePattern = /^[0-9]{7,15}$/;
  
     if (userid === "" || password === "") {
       toast.error("All fields are required", {
@@ -235,6 +237,7 @@ const Login = ({ closeLoginModal }) => {
     }
   }
 
+  // code end by ansari
   // Shubham- Login Functionality ends here
   return (
     <>
@@ -326,5 +329,6 @@ const Login = ({ closeLoginModal }) => {
     </>
   );
 };
+
 
 export default Login;

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { BiSolidCategory } from "react-icons/bi";
 import { FaLocationDot } from "react-icons/fa6";
-
+// import { BiSolidCategory } from 'react-icons/bi';
 import $ from "jquery"; // Import jQuery
 import myContext from "./context/MyContext";
 import { Link } from "react-router-dom";
@@ -208,7 +208,7 @@ const HomeProducts = () => {
 
   return (
     <>
-      <div className="container">
+       <div className="container">
         <h3>
           {" "}
           <BiSolidCategory className="fs-2 p-1" />
@@ -275,7 +275,80 @@ const HomeProducts = () => {
             </div>
           </div>
         </div>
+      </div> 
+
+{/* code start by ansari */}
+{/* 
+<div className="container">
+      <h3>
+        <BiSolidCategory className="fs-2 p-1" />
+        Top Categories
+      </h3>
+      <p className="px-2" style={{ fontSize: 13.5 }}>
+        Explore our top categories
+      </p>
+
+      <div className="row">
+        <div className="col-12 col-md-3 mb-4">
+          <div className="subs-cat d-flex flex-column justify-content-center">
+            <h4>Men's Fashion</h4>
+            <Link
+              to={{
+                pathname: '/mens-category',
+                search: `?category=Men's Fashion`,
+              }}
+            >
+              <button className="btn btn-outline-light rounded-pill">
+                Shop Now
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 mb-4">
+          <div className="subs-cat-2 d-flex flex-column justify-content-center">
+            <h4>Women Fashion</h4>
+            <Link
+              to={{
+                pathname: '/womens-category',
+                search: `?category=Women's Fashion`,
+              }}
+            >
+              <button className="btn btn-outline-light rounded-pill">
+                Shop Now
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 mb-4">
+          <div className="subs-cat-3 d-flex flex-column justify-content-center">
+            <h4>Fashion Accessories</h4>
+            <Link
+              to={{
+                pathname: '/accessories',
+                search: `?category=Accessories`,
+              }}
+            >
+              <button className="btn btn-outline-light rounded-pill">
+                Shop Now
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="col-12 col-md-3 mb-4">
+          <div className="subs-cat-4 d-flex flex-column justify-content-center">
+            <h4>Kitchen</h4>
+            <Link to="/kitchen-category">
+              <button className="btn btn-outline-light rounded-pill">
+                Shop Now
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
+    </div> */}
+
+{/* code end by ansari */}
+
       <br></br>
       <div className="mx-0 mx-md-5 px-0 px-md-5">
         <div className="row">
@@ -531,7 +604,7 @@ const HomeProducts = () => {
                             <span
                               className="text-muted"
                               style={{
-                                fontSize: "13px",
+                                fontSize: "14px",
                               }}
                             >
                               {" "}

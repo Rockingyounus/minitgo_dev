@@ -29,6 +29,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
 // import { BiCartAlt } from "react-icons/bi";
 import cartIcon from "../assets/cart-icon.svg";
+// import carticonss from "../assets/blogPage/carticonss";
 // import icons from "../assets/blogPage/icons.svg";
 import { BiLogIn } from "react-icons/bi";
 import { BiMenuAltRight } from "react-icons/bi";
